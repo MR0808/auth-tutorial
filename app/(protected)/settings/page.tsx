@@ -57,11 +57,12 @@ const SettingsPage = () => {
         startTransition(() => {
             settings(values)
                 .then((data) => {
-                    if (data.error) {
+                    console.log(data);
+                    if (data?.error) {
                         setError(data.error);
                     }
 
-                    if (data.success) {
+                    if (data?.success) {
                         update();
                         setSuccess(data.success);
                     }
